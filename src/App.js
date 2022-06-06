@@ -5,7 +5,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: ""
+      selectedOption: "Not at all",
+      totalScore : 0,
     };
   }
 
@@ -13,62 +14,100 @@ class App extends Component {
     this.setState({
       selectedOption: changeEvent.target.value
     });
+
+    let eachScore;
+
+    switch (this.state.selectedOption) {
+      case "Not at all":
+        eachScore =  4;
+        break;
+      case "Somewhat":
+        eachScore = 3;
+        break;
+      case "Moderately":
+        eachScore = 2;
+        break;
+      case "Quite a bit":
+        eachScore =  1;
+        break;
+      default:
+        eachScore =  0;  
+    }
+
+    let sumScore = eachScore + this.state.totalScore;
+    this.setState({totalScore: sumScore });
   };
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-    console.log("You have submitted:", this.state.selectedOption);
+    console.log("You have got Scores:", this.state.totalScore);
+    this.setState({totalScore:0});
   };
 
   render() {
     return (
       <div className="container">
-        <div className="row mt-5">
-          <div className="col-sm-12">
-          <div id="heading">
+        <div id="heading">
             <h1>PELVIC FLOOR IMPACT QUESTIONNAIRE</h1>
             <h2>
-                How do the following symptoms or conditions usually affect each of the three ereas below?
+                How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
           </div>
+          <div className="col-sm-12">
             <form onSubmit={this.handleFormSubmit}>
-              <div className="form-check">
+              <div className="form-check form-check-inline">
                 <label>
                   <input
                     type="radio"
                     name="react-tips"
-                    value="option1"
-                    checked={this.state.selectedOption === "option1"}
+                    value="Not at all"
+                    checked={this.state.selectedOption === "Not at all"}
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />
-                  Option 1
+                  Not at all
                 </label>
               </div>
-              <div className="form-check">
+
+              <div className="form-check form-check-inline">
                 <label>
                   <input
                     type="radio"
                     name="react-tips"
-                    value="option2"
-                    checked={this.state.selectedOption === "option2"}
+                    value="Somewhat"
+                    checked={this.state.selectedOption === "Somewhat"}
                     onChange={this.handleOptionChange}
                     className="form-check-input"
-                  />
-                  Option 2
+                  />Somewhat
                 </label>
               </div>
-              <div className="form-check">
+
+
+              <div className="form-check form-check-inline">
                 <label>
                   <input
                     type="radio"
                     name="react-tips"
-                    value="option3"
-                    checked={this.state.selectedOption === "option3"}
+                    value="Moderately"
+                    checked={this.state.selectedOption === "Moderately"}
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="react-tips"
+                    value="Quite a bit"
+                    checked={this.state.selectedOption === "Quite a bit"}
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />
-                  Option 3
+                 Quite a bit
                 </label>
               </div>
               <div className="form-group">
@@ -78,7 +117,6 @@ class App extends Component {
               </div>
             </form>
           </div>
-        </div>
       </div>
     );
   }
