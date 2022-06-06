@@ -19,19 +19,19 @@ class App extends Component {
 
     switch (this.state.selectedOption) {
       case "Not at all":
-        eachScore =  4;
+        eachScore =  3;
         break;
       case "Somewhat":
-        eachScore = 3;
-        break;
-      case "Moderately":
         eachScore = 2;
         break;
+      case "Moderately":
+        eachScore = 1;
+        break;
       case "Quite a bit":
-        eachScore =  1;
+        eachScore =  0;
         break;
       default:
-        eachScore =  0;  
+        eachScore =  -1;  
     }
 
     let sumScore = eachScore + this.state.totalScore;
