@@ -4,14 +4,14 @@
 
   h1 {
     background-color: black;
-    text-align: center;
+    text-align: left;
     color:#fff;
     font-size: 25px;
     padding: 10px;   
   }
 
   #heading {
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
 
@@ -20,5 +20,6 @@
     font-size: 20px;
     padding:10px;
     color:blue;
+    margin-bottom: 15px;
   }
 

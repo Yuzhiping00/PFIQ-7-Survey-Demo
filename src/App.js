@@ -5,7 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: "Not at all",
+      selectedOption: "",
       totalScore : 0,
     };
   }
@@ -53,15 +53,17 @@ class App extends Component {
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
           </div>
-          <div className="col-sm-12">
+          <div className="col-sm-12" style={{textAlign:'left'}}>
             <form onSubmit={this.handleFormSubmit}>
+            <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
+              <p><strong>Bladder or Urine</strong></p>
+            
               <div className="form-check form-check-inline">
                 <label>
                   <input
                     type="radio"
-                    name="react-tips"
+                    name="baldder_1"
                     value="Not at all"
-                    checked={this.state.selectedOption === "Not at all"}
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />
@@ -73,9 +75,8 @@ class App extends Component {
                 <label>
                   <input
                     type="radio"
-                    name="react-tips"
+                    name="baldder_1"
                     value="Somewhat"
-                    checked={this.state.selectedOption === "Somewhat"}
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />Somewhat
@@ -87,9 +88,9 @@ class App extends Component {
                 <label>
                   <input
                     type="radio"
-                    name="react-tips"
+                    name="baldder_1"
                     value="Moderately"
-                    checked={this.state.selectedOption === "Moderately"}
+                    
                     onChange={this.handleOptionChange}
                     className="form-check-input"
                   />Moderately
@@ -101,15 +102,473 @@ class App extends Component {
                 <label>
                   <input
                     type="radio"
-                    name="react-tips"
+                    name="baldder_1"
                     value="Quite a bit"
-                    checked={this.state.selectedOption === "Quite a bit"}
-                    onChange={this.handleOptionChange}
                     className="form-check-input"
                   />
                  Quite a bit
                 </label>
               </div>
+             
+            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+            <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_1"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_1"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_1"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_1"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+
+              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+            <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_1"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_1"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_1"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_1"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+
+
+            {/* Q2 start here */}
+
+            <h5 style={{marginTop:'15px'}}>  2. Ability to do physical activities such as walking, swimming, or other exiercise?</h5>
+              <p><strong>Bladder or Urine</strong></p>
+            
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_2"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_2"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_2"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_2"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+             
+            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+            <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_2"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_2"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_2"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_2"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+
+              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+            <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_2"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_2"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_2"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_2"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+
+              {/* Q3 start here */}
+
+              <h5 style={{marginTop:'15px'}}>  3. Entertainment activities such as going to a movie or concert?</h5>
+              <p><strong>Bladder or Urine</strong></p>
+            
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_3"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_3"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_3"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="baldder_3"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+             
+            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+            <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_3"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_3"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_3"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="bowel_3"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+
+              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+            <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_3"
+                    value="Not at all"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />
+                  Not at all
+                </label>
+              </div>
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_3"
+                    value="Somewhat"
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Somewhat
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_3"
+                    value="Moderately"
+                    
+                    onChange={this.handleOptionChange}
+                    className="form-check-input"
+                  />Moderately
+                </label>
+              </div>
+
+
+              <div className="form-check form-check-inline">
+                <label>
+                  <input
+                    type="radio"
+                    name="vagina_"
+                    value="Quite a bit"
+                    className="form-check-input"
+                  />
+                 Quite a bit
+                </label>
+              </div>
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
               <div className="form-group">
                 <button className="btn btn-primary mt-2" type="submit">
                   Save
