@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       selectedOption: "",
       scores:[],
-      totalScore : 0,
+      displayScore: null,
+      totalScore:0
     };
   }
 
@@ -23,28 +24,25 @@ class App extends Component {
 
     switch (changeEvent.target.value) {
       case "Not at all":
-        eachScore =  3;
+        eachScore =  0;
         break;
       case "Somewhat":
-        eachScore = 2;
-        break;
-      case "Moderately":
         eachScore = 1;
         break;
+      case "Moderately":
+        eachScore = 2;
+        break;
       case "Quite a bit":
-        eachScore =  0;
+        eachScore =  3;
         break;
       default:
         eachScore =  -1;  
     }
-    // console.log(eachScore);
-    // console.log(changeEvent.target.name);
 
-    // let sumScore = eachScore + this.state.totalScore;
-    // this.setState({totalScore: sumScore });
     let element = {};
     element.id = changeEvent.target.name;
     element.score = eachScore;
+    element.value = changeEvent.target.value;
     
     let flag = false;
     let index;
@@ -66,11 +64,28 @@ class App extends Component {
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-    console.log("You have got Scores:", this.state.totalScore);
-    this.setState({totalScore:0});
+    let sumScores = 0;
+    for(let i = 0; i<= this.state.scores.length-1; i++){
+      sumScores = sumScores + (this.state.scores[i].score);
+    }
+
+    if(this.state.scores.length === 21){
+      this.setState({displayScore: true});
+      this.setState({totalScore: sumScores});
+      console.log("Total score is: "+ sumScores);
+    }else{
+      this.setState({displayScore: false});
+    }
   };
 
   render() {
+
+    let show;
+    if(this.state.displayScore){
+      show = <p>You have got Scores:{this.state.totalScore} </p>
+    }else if(this.state.displayScore === false){
+      show = <p>Please complete whole survey</p>
+    }
     return (
       <div className="container">
         <div id="heading">
@@ -84,6 +99,8 @@ class App extends Component {
               <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
               <p><strong>Bladder or Urine</strong></p>
             
+              <p><strong>Bladder or Urine</strong></p>
+            
               <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -91,7 +108,6 @@ class App extends Component {
                     name="baldder_1"
                     value="Not at all"
                     onChange={this.handleOptionChange}
-                    checked = {this.state.selectedOption === 'Not at all'}
                     className="form-check-input"
                   />
                   Not at all
@@ -1248,6 +1264,10 @@ class App extends Component {
                   Save
                 </button>
               </div>
+              <div>
+                {show}
+              </div>
+              
             </form>
           </div>
       </div>
