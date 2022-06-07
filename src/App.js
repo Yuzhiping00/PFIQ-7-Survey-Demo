@@ -43,7 +43,7 @@ class App extends Component {
     element.id = changeEvent.target.name;
     element.score = eachScore;
     element.value = changeEvent.target.value;
-    
+  
     let flag = false;
     let index;
     for (let obj of this.state.scores) {
@@ -55,7 +55,10 @@ class App extends Component {
     }
 
     if(flag){
-      this.state.scores[index].score = eachScore;
+      let newArr = [...this.state.scores];
+      newArr[index].score = eachScore;
+      newArr[index].value = changeEvent.target.value;
+      this.setState({scores: newArr});
     }else{
       this.state.scores.push(element);
     }
@@ -1257,7 +1260,7 @@ class App extends Component {
               </div>
 
               {/* save button here */}
-              <div className="form-group" style={{textAlign:'left', marginBottom:'25px'}}>
+              <div className="form-group" style={{textAlign:'left', marginBottom:'15px'}}>
                 <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}}type="submit">
                   Save
                 </button>
