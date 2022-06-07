@@ -4,10 +4,11 @@
 
   h1 {
     background-color: black;
-    text-align: left;
+    text-align: center;
     color:#fff;
-    font-size: 25px;
-    padding: 10px;   
+    font-size: 22px;
+    padding: 5px;  
+    margin-top:20px; 
   }
 
   #heading {
@@ -17,9 +18,10 @@
 
   h2 {
     border: 2px solid black;
-    font-size: 20px;
-    padding:10px;
+    font-size: 18px;
+    padding:5px;
     color:blue;
     margin-bottom: 15px;
+    text-align: center;
   }
 

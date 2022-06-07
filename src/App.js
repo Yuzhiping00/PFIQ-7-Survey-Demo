@@ -76,9 +76,12 @@ class App extends Component {
     if(this.state.scores.length === 21){
       this.setState({displayScore: true});
       this.setState({totalScore: sumScores});
+      alert("Total score is: "+ sumScores);
       console.log("Total score is: "+ sumScores);
     }else{
       this.setState({displayScore: false});
+      alert("Please Complete Every Question in Survey");
+      
     }
   };
 
@@ -91,7 +94,7 @@ class App extends Component {
       show = <p style={{color: 'red', fontSize:'20px',paddingTop:'25px', float:'right'}}> ***Please complete whole survey***</p>
     }
     return (
-      <div className="container" style={{width:'55%'}}>
+      <div className="container" style={{width:'50%'}}>
         <div id="heading">
             <h1>PELVIC FLOOR IMPACT QUESTIONNAIRE</h1>
             <h2>
@@ -102,7 +105,7 @@ class App extends Component {
             <form onSubmit={this.handleFormSubmit}>
               <br/>
               <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
-              <br/>
+             
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
@@ -275,9 +278,10 @@ class App extends Component {
 
 
             {/* Q2 start here */}
-
-            <h5 style={{marginTop:'15px'}}>  2. Ability to do physical activities such as walking, swimming, or other exiercise?</h5>
             <br/>
+            
+            <h5 style={{marginTop:'25px'}}>  2. Ability to do physical activities such as walking, swimming, or other exiercise?</h5>
+        
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
@@ -451,8 +455,8 @@ class App extends Component {
 
               {/* Q3 start here */}
 
-              <h5 style={{marginTop:'15px'}}>  3. Entertainment activities such as going to a movie or concert?</h5>
-              <br/>
+              <h5 style={{marginTop:'25px'}}>  3. Entertainment activities such as going to a movie or concert?</h5>
+            
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
@@ -627,8 +631,8 @@ class App extends Component {
               </div>
 
                {/* Q4 start here */}
-               <h5 style={{marginTop:'15px'}}>  4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</h5>
-               <br/>
+               <h5 style={{marginTop:'25px'}}>  4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</h5>
+              
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
@@ -802,8 +806,8 @@ class App extends Component {
               </div>
 
                {/* Q5 start here */}
-               <h5 style={{marginTop:'15px'}}>   5. Participating in social activities outside your home?</h5>
-               <br/>
+               <h5 style={{marginTop:'25px'}}>   5. Participating in social activities outside your home?</h5>
+               
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
@@ -979,8 +983,8 @@ class App extends Component {
 
               {/* Q6 start here */}
 
-              <h5 style={{marginTop:'15px'}}> 6. Emotional health(nervousness, depression, etc)?</h5>
-              <br/>
+              <h5 style={{marginTop:'25px'}}> 6. Emotional health(nervousness, depression, etc)?</h5>
+             
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
@@ -1156,8 +1160,8 @@ class App extends Component {
 
          {/* Q7 start here */}
 
-         <h5 style={{marginTop:'15px'}}>  7. Feeling frustrated?</h5>
-              <br/>
+         <h5 style={{marginTop:'25px'}}>  7. Feeling frustrated?</h5>
+              
               <div className="form-check form-check-inline">
                 <label><strong>Bladder or Urine</strong></label>
               </div>
