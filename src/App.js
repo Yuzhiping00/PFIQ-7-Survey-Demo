@@ -82,12 +82,12 @@ class App extends Component {
 
     let show;
     if(this.state.displayScore){
-      show = <p>You have got Scores:{this.state.totalScore} </p>
+      show = <p style={{color: 'green', fontSize:'20px',paddingTop:'25px', float:'right'}}>Total scores: {this.state.totalScore} </p>
     }else if(this.state.displayScore === false){
-      show = <p>Please complete whole survey</p>
+      show = <p style={{color: 'red', fontSize:'20px',paddingTop:'25px', float:'right'}}> ***Please complete whole survey***</p>
     }
     return (
-      <div className="container">
+      <div className="container" style={{width:'55%'}}>
         <div id="heading">
             <h1>PELVIC FLOOR IMPACT QUESTIONNAIRE</h1>
             <h2>
@@ -97,8 +97,6 @@ class App extends Component {
           <div className="col-sm-12" style={{textAlign:'left'}}>
             <form onSubmit={this.handleFormSubmit}>
               <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
-              <p><strong>Bladder or Urine</strong></p>
-            
               <p><strong>Bladder or Urine</strong></p>
             
               <div className="form-check form-check-inline">
@@ -1259,15 +1257,12 @@ class App extends Component {
               </div>
 
               {/* save button here */}
-              <div className="form-group" style={{textAlign:'center', marginBottom:'20px'}}>
+              <div className="form-group" style={{textAlign:'left', marginBottom:'25px'}}>
                 <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}}type="submit">
                   Save
                 </button>
-              </div>
-              <div>
                 {show}
               </div>
-              
             </form>
           </div>
       </div>
