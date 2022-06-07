@@ -13,6 +13,7 @@ class App extends Component {
     };
   }
 
+  // it is a method here
   handleOptionChange = changeEvent => {
 
     this.setState({
@@ -99,11 +100,14 @@ class App extends Component {
           </div>
           <div className="col-sm-12" style={{textAlign:'left'}}>
             <form onSubmit={this.handleFormSubmit}>
+              <br/>
               <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
-              <p><strong>Bladder or Urine</strong></p>
-            
+              <br/>
               <div className="form-check form-check-inline">
-                <label>
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label >
                   <input
                     type="radio"
                     name="baldder_1"
@@ -155,7 +159,10 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -209,7 +216,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -267,7 +277,10 @@ class App extends Component {
             {/* Q2 start here */}
 
             <h5 style={{marginTop:'15px'}}>  2. Ability to do physical activities such as walking, swimming, or other exiercise?</h5>
-              <p><strong>Bladder or Urine</strong></p>
+            <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
             
               <div className="form-check form-check-inline">
                 <label>
@@ -322,7 +335,10 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -376,7 +392,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>			  
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -433,7 +452,11 @@ class App extends Component {
               {/* Q3 start here */}
 
               <h5 style={{marginTop:'15px'}}>  3. Entertainment activities such as going to a movie or concert?</h5>
-              <p><strong>Bladder or Urine</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
+			  
             
               <div className="form-check form-check-inline">
                 <label>
@@ -488,7 +511,11 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
+
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -542,7 +569,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>			  
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -598,7 +628,10 @@ class App extends Component {
 
                {/* Q4 start here */}
                <h5 style={{marginTop:'15px'}}>  4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</h5>
-              <p><strong>Bladder or Urine</strong></p>
+               <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
             
               <div className="form-check form-check-inline">
                 <label>
@@ -653,7 +686,11 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
+
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -707,7 +744,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>			  
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -763,7 +803,11 @@ class App extends Component {
 
                {/* Q5 start here */}
                <h5 style={{marginTop:'15px'}}>   5. Participating in social activities outside your home?</h5>
-              <p><strong>Bladder or Urine</strong></p>
+               <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
+			  
             
               <div className="form-check form-check-inline">
                 <label>
@@ -818,7 +862,11 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
+
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -872,7 +920,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>			  
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -929,7 +980,11 @@ class App extends Component {
               {/* Q6 start here */}
 
               <h5 style={{marginTop:'15px'}}> 6. Emotional health(nervousness, depression, etc)?</h5>
-              <p><strong>Bladder or Urine</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
+			  
             
               <div className="form-check form-check-inline">
                 <label>
@@ -984,7 +1039,10 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -1038,7 +1096,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>			  
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -1096,7 +1157,10 @@ class App extends Component {
          {/* Q7 start here */}
 
          <h5 style={{marginTop:'15px'}}>  7. Feeling frustrated?</h5>
-              <p><strong>Bladder or Urine</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bladder or Urine</strong></label>
+              </div>
             
               <div className="form-check form-check-inline">
                 <label>
@@ -1151,7 +1215,11 @@ class App extends Component {
                 </label>
               </div>
              
-            <p style={{marginTop:'10px'}}><strong>Bowel or rectum</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label><strong>Bowel or rectum</strong></label>
+              </div>
+
             <div className="form-check form-check-inline">
                 <label>
                   <input
@@ -1205,7 +1273,10 @@ class App extends Component {
                 </label>
               </div>
 
-              <p style={{marginTop:'10px'}}><strong>Vagina</strong></p>
+              <br/>
+              <div className="form-check form-check-inline">
+                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+              </div>
             <div className="form-check form-check-inline">
                 <label>
                   <input
