@@ -102,7 +102,10 @@ class App extends Component {
             </h2>
           </div>
           <div className="col-sm-12" style={{textAlign:'left'}}>
-            <form onSubmit={this.handleFormSubmit}>
+            <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
+                                                    width:'99%',
+                                                    margin: '20px auto',
+                                                    padding: '10px 10px',}}>
               <br/>
               <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
              
@@ -221,7 +224,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>
             <div className="form-check form-check-inline">
                 <label>
@@ -398,7 +401,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>			  
             <div className="form-check form-check-inline">
                 <label>
@@ -575,7 +578,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>			  
             <div className="form-check form-check-inline">
                 <label>
@@ -750,7 +753,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>			  
             <div className="form-check form-check-inline">
                 <label>
@@ -926,7 +929,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>			  
             <div className="form-check form-check-inline">
                 <label>
@@ -1102,7 +1105,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>			  
             <div className="form-check form-check-inline">
                 <label>
@@ -1279,7 +1282,7 @@ class App extends Component {
 
               <br/>
               <div className="form-check form-check-inline">
-                <label style={{marginRight:'73px'}}><strong>Vagina</strong></label>
+                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
               </div>
             <div className="form-check form-check-inline">
                 <label>
