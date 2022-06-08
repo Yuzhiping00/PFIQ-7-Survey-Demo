@@ -101,11 +101,11 @@ class App extends Component {
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
           </div>
-          <div className="col-sm-12" style={{textAlign:'left'}}>
+          <div className="col-sm-12" >
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
                                                     width:'99%',
                                                     margin: '20px auto',
-                                                    padding: '10px 10px',}}>
+                                                    padding: '20px 20px',}}>
               <br/>
               <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
              
