@@ -89,1261 +89,930 @@ class App extends Component {
 
     let show;
     if(this.state.displayScore){
-      show = <p style={{color: 'green', fontSize:'20px',paddingTop:'25px', float:'right'}}>Total scores: {this.state.totalScore} </p>
+      show = <p style={{color: 'green', fontSize:'20px',paddingTop:'25px', float:'right',marginRight:'10px'}}>Total scores: {this.state.totalScore} </p>
     }else if(this.state.displayScore === false){
-      show = <p style={{color: 'red', fontSize:'20px',paddingTop:'25px', float:'right'}}> ***Please complete whole survey***</p>
+      show = <p style={{color: 'red', fontSize:'20px',paddingTop:'25px', float:'right',marginRight:'10px'}}> ***Please complete whole survey***</p>
     }
     return (
-      <div className="container" style={{width:'50%'}}>
+      <div className="container">
         <div id="heading">
             <h1>PELVIC FLOOR IMPACT QUESTIONNAIRE</h1>
             <h2>
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
-          </div>
-          <div className="col-sm-12" >
+        </div>
+          <div className="col-sm-12 col-md-10 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
-                                                    width:'99%',
-                                                    margin: '20px auto',
-                                                    padding: '20px 20px',}}>
-              <br/>
-              <h5> 1. Ability to do household chores (cooking, laundry, housecleaning)?</h5>
-             
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-              <div className="form-check form-check-inline">
-                <label >
-                  <input
-                    type="radio"
-                    name="baldder_1"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_1"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_1"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_1"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_1"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_1"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_1"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_1"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_1"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_1"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_1"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_1"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-
-            {/* Q2 start here */}
-            <br/>
-            
-            <h5 style={{marginTop:'25px'}}>  2. Ability to do physical activities such as walking, swimming, or other exiercise?</h5>
-        
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-            
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_2"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_2"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_2"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_2"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_2"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_2"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_2"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_2"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>			  
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_2"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_2"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_2"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_2"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              {/* Q3 start here */}
-
-              <h5 style={{marginTop:'25px'}}>  3. Entertainment activities such as going to a movie or concert?</h5>
-            
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-			  
-            
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_3"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_3"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_3"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_3"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_3"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_3"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_3"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_3"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>			  
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_3"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_3"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_3"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_3"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-               {/* Q4 start here */}
-               <h5 style={{marginTop:'25px'}}>  4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</h5>
-              
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-            
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_4"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_4"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_4"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_4"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_4"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_4"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_4"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_4"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>			  
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_4"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_4"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_4"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_4"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-               {/* Q5 start here */}
-               <h5 style={{marginTop:'25px'}}>   5. Participating in social activities outside your home?</h5>
-               
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-			  
-            
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_5"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_5"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_5"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_5"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_5"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_5"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_5"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_5"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>			  
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_5"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_5"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_5"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-                <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_5"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              {/* Q6 start here */}
-
-              <h5 style={{marginTop:'25px'}}> 6. Emotional health(nervousness, depression, etc)?</h5>
-             
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-			  
-            
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_6"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_6"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_6"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_6"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_6"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_6"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_6"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_6"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>			  
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_6"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_6"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_6"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_6"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-
-         {/* Q7 start here */}
-
-         <h5 style={{marginTop:'25px'}}>  7. Feeling frustrated?</h5>
-              
-              <div className="form-check form-check-inline">
-                <label><strong>Bladder or Urine</strong></label>
-              </div>
-            
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_7"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_7"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_7"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="baldder_7"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-             
-              <br/>
-              <div className="form-check form-check-inline">
-                <label><strong>Bowel or rectum</strong></label>
-              </div>
-
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_7"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_7"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_7"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="bowel_7"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              <br/>
-              <div className="form-check form-check-inline">
-                <label style={{marginRight:'73.5px'}}><strong>Vagina</strong></label>
-              </div>
-            <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_7"
-                    value="Not at all"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />
-                  Not at all
-                </label>
-              </div>
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_7"
-                    value="Somewhat"
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Somewhat
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_7"
-                    value="Moderately"
-                    
-                    onChange={this.handleOptionChange}
-                    className="form-check-input"
-                  />Moderately
-                </label>
-              </div>
-
-
-              <div className="form-check form-check-inline">
-                <label>
-                  <input
-                    type="radio"
-                    name="vagina_7"
-                    value="Quite a bit"
-                    className="form-check-input"
-                    onChange={this.handleOptionChange}
-                  />
-                 Quite a bit
-                </label>
-              </div>
-
-              {/* save button here */}
-              <div className="form-group" style={{textAlign:'left', marginBottom:'15px'}}>
-                <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}}type="submit">
+                                                    width:'100%',
+                                                    margin: '10px auto',
+                                                    padding: '5px 5px',}}>
+              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px',fontSize:'18px'}}> 1. Ability to do household chores (cooking, laundry, housecleaning)?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> 
+                        <input type="radio" 
+                              name="baldder_1" 
+                              value="Not at all" 
+                              onChange={this.handleOptionChange} 
+                              className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="baldder_1"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_1"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_1"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_1" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_1"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_1"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_1"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_1" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_1"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_1"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_1"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+{/* question 2 table here */}
+
+<p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 2. Ability to do physical activities such as walking, swimming, or other exiercise?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> <input type="radio" name="baldder_2" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
+                      <td><input
+                            type="radio"
+                            name="baldder_2"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_2"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_2"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_2" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_2"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_2"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_2"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_2" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_2"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_2"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_2"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+{/* question 3 table here */}
+<p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 3. Entertainment activities such as going to a movie or concert?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> <input type="radio" name="baldder_3" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
+                      <td><input
+                            type="radio"
+                            name="baldder_3"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_3"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_3"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_3" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_3"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_3"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_3"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_3" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_3"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_3"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_3"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                {/* question 4 table here */}
+                <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> 
+                        <input type="radio" 
+                          name="baldder_4" 
+                          value="Not at all" 
+                          onChange={this.handleOptionChange} 
+                          className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="baldder_4"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_4"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_4"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_4" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_4"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_4"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_4"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_4" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_4"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_4"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_4"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              {/* question 5 table here */}
+              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 5. Participating in social activities outside your home?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> 
+                        <input type="radio" 
+                          name="baldder_5" 
+                          value="Not at all" 
+                          onChange={this.handleOptionChange} 
+                          className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="baldder_5"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_5"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_5"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_5" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_5"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_5"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_5"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_5" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_5"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_5"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_5"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                {/* question 6 table here */}
+              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 6. Emotional health(nervousness, depression, etc)?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> 
+                        <input type="radio" 
+                          name="baldder_6" 
+                          value="Not at all" 
+                          onChange={this.handleOptionChange} 
+                          className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="baldder_6"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_6"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_6"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_6" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_6"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_6"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_6"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_6" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_6"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_6"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_6"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                {/* question 7 table here */}
+              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}>  7. Feeling frustrated?</p>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Not at all</th>
+                      <th scope="col">Somewhat</th>
+                      <th scope="col">Moderately</th>
+                      <th scope="col">Quite a bit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <td> 
+                        <input type="radio" 
+                          name="baldder_7" 
+                          value="Not at all" 
+                          onChange={this.handleOptionChange} 
+                          className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="baldder_7"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="baldder_7"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="baldder_7"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="bowel_7" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="bowel_7"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="bowel_7"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="bowel_7"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <td> 
+                        <input 
+                          type="radio" 
+                          name="vagina_7" 
+                          value="Not at all"
+                           onChange={this.handleOptionChange} 
+                           className="form-check-input" />
+                      </td>
+                      <td><input
+                            type="radio"
+                            name="vagina_6"
+                            value="Somewhat"
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                          /></td>
+                      <td> 
+                        <input
+                            type="radio"
+                            name="vagina_7"
+                            value="Moderately"
+                            
+                            onChange={this.handleOptionChange}
+                            className="form-check-input"
+                           />
+                      </td>
+                      <td>
+                          <input
+                            type="radio"
+                            name="vagina_7"
+                            value="Quite a bit"
+                            className="form-check-input"
+                            onChange={this.handleOptionChange}
+                          />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                {/* save button here */}
+              <div className="form-group" style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px'}}>
+                <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}} type="submit">
                   Save
                 </button>
                 {show}
               </div>
+              
             </form>
           </div>
       </div>
