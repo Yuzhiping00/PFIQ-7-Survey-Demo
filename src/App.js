@@ -69,21 +69,83 @@ class App extends Component {
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
     let sumScores = 0;
-    for(let i = 0; i<= this.state.scores.length-1; i++){
-      sumScores = sumScores + (this.state.scores[i].score);
-    }
-
+    // for(let i = 0; i<= this.state.scores.length-1; i++){
+    //   sumScores = sumScores + (this.state.scores[i].score);
+    // }
+    let q1 =[], q2 =[], q3 =[], q4 =[], q5=[], q6=[], q7=[];
     if(this.state.scores.length === 21){
       this.setState({displayScore: true});
+      for(let i=0; i<this.state.scores.length; i++){
+        if(this.state.scores[i].id.includes("_1")){
+          q1.push(this.state.scores[i].score);
+        }else if(this.state.scores[i].id.includes("_2")){
+          q2.push(this.state.scores[i].score);
+        }else if(this.state.scores[i].id.includes("_3")){
+          q3.push(this.state.scores[i].score);
+        }else if(this.state.scores[i].id.includes("_4")){
+          q4.push(this.state.scores[i].score);
+        }else if(this.state.scores[i].id.includes("_5")){
+          q5.push(this.state.scores[i].score);
+        }else if(this.state.scores[i].id.includes("_6")){
+          q6.push(this.state.scores[i].score);
+        }else if(this.state.scores[i].id.includes("_7")){
+          q7.push(this.state.scores[i].score);
+        }
+      }
+      console.log("q1 = "+ q1);
+      console.log("q2 = "+ q2);
+      console.log("q3 = "+ q3);
+      console.log("q4 = "+ q4);
+      console.log("q5 = "+ q5);
+      console.log("q6 = "+ q6);
+      console.log("q7 = "+ q7);
+
+      let q1_score= 0; 
+      let q2_score= 0; 
+      let q3_score= 0; 
+      let q4_score= 0; 
+      let q5_score= 0; 
+      let q6_score= 0; 
+      let q7_score= 0; 
+
+      // for(let i =0; i<q1.length; i++){
+      //   q1_score += q1[i];
+      // }
+      q1_score = this.addForEachQuestion(q1);
+      console.log("q1 score = "+ q1_score);
+      q2_score = this.addForEachQuestion(q2);
+      console.log("q2 score = "+ q2_score);
+      q3_score = this.addForEachQuestion(q3);
+      console.log("q3 score = "+ q3_score);
+      q4_score = this.addForEachQuestion(q4);
+      console.log("q4 score = "+ q4_score);
+      q5_score = this.addForEachQuestion(q5);
+      console.log("q5 score = "+ q5_score);
+      q6_score = this.addForEachQuestion(q6);
+      console.log("q6 score = "+ q6_score);
+      q7_score = this.addForEachQuestion(q7);
+      console.log("q7 score = "+ q7_score);
+
+      // add all 7 scores
+      sumScores = q1_score + q2_score + q3_score + q4_score + q5_score + q6_score + q7_score;
       this.setState({totalScore: sumScores});
       alert("Total score is: "+ sumScores);
       console.log("Total score is: "+ sumScores);
     }else{
       this.setState({displayScore: false});
       alert("Please Complete Every Question in Survey");
-      
     }
   };
+
+   addForEachQuestion= (question) =>{
+     let value = 0;
+     for(let i= 0; i< question.length; i++){
+        value += question[i];
+     }
+     let finalResult = value / 3 * 100 / 3;
+     return finalResult; 
+   }
+
 
   render() {
 
