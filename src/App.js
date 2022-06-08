@@ -105,10 +105,10 @@ class App extends Component {
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
                                                     width:'100%',
                                                     margin: '10px auto',
-                                                    padding: '5px 5px',}}>
-              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px',fontSize:'18px'}}> 1. Ability to do household chores (cooking, laundry, housecleaning)?</p>
-              <table class="table table-bordered border-dark">
-                  <thead>
+                                                    padding: '15px 15px',}}>
+              <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
+              <table className="table table-bordered border-dark">
+              <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
@@ -238,9 +238,9 @@ class App extends Component {
 
 {/* question 2 table here */}
 
-<p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 2. Ability to do physical activities such as walking, swimming, or other exiercise?</p>
-              <table class="table table-bordered border-dark">
-                  <thead>
+<p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>2. Ability to do physical activities such as walking, swimming, or other exiercise?</strong></p>
+              <table className="table table-bordered border-dark">
+              <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
@@ -362,9 +362,9 @@ class App extends Component {
                 </table>
 
 {/* question 3 table here */}
-        <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 3. Entertainment activities such as going to a movie or concert?</p>
-        <table class="table table-bordered border-dark">
-                  <thead>
+        <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>3. Entertainment activities such as going to a movie or concert?</strong> </p>
+        <table className="table table-bordered border-dark">
+        <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
@@ -486,9 +486,9 @@ class App extends Component {
                 </table>
 
                 {/* question 4 table here */}
-                <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</p>
-                <table class="table table-bordered border-dark">
-                  <thead>
+                <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</strong> </p>
+                <table className="table table-bordered border-dark">
+                <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
@@ -616,9 +616,9 @@ class App extends Component {
                 </table>
 
               {/* question 5 table here */}
-              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 5. Participating in social activities outside your home?</p>
-              <table class="table table-bordered border-dark">
-                  <thead>
+              <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>5. Participating in social activities outside your home?</strong></p>
+              <table className="table table-bordered border-dark">
+              <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
@@ -746,9 +746,9 @@ class App extends Component {
                 </table>
 
                 {/* question 6 table here */}
-              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}> 6. Emotional health(nervousness, depression, etc)?</p>
-              <table class="table table-bordered border-dark">
-                  <thead>
+              <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>6. Emotional health(nervousness, depression, etc)</strong></p>
+              <table className="table table-bordered border-dark">
+              <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
@@ -876,9 +876,9 @@ class App extends Component {
                 </table>
 
                 {/* question 7 table here */}
-              <p style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px', marginTop:'20px', fontSize:'18px'}}>  7. Feeling frustrated?</p>
-              <table class="table table-bordered border-dark">
-                  <thead>
+              <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>7. Feeling frustrated?</strong></p>
+              <table className="table table-bordered border-dark">
+              <thead class="table-success">
                     <tr>
                       <th scope="col"></th>
                       <th scope="col">Not at all</th>
