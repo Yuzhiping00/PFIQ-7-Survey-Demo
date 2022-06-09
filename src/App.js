@@ -166,6 +166,8 @@ class App extends Component {
                                                     padding: '15px 15px',
                                                     borderRadius:'10px'}}>
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
+                                
+              <div class="table-responsive">                                      
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
@@ -293,11 +295,13 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+              </div>
 
 
 {/* question 2 table here */}
 
 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>2. Ability to do physical activities such as walking, swimming, or other exiercise?</strong></p>
+<div class="table-responsive">   
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
@@ -419,9 +423,11 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+              </div>
 
 {/* question 3 table here */}
         <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>3. Entertainment activities such as going to a movie or concert?</strong> </p>
+        <div class="table-responsive">   
         <table className="table table-bordered border-dark table-hover">
         <thead className="table-success">
                     <tr>
@@ -673,9 +679,11 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+              </div>
 
               {/* question 5 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>5. Participating in social activities outside your home?</strong></p>
+              <div className="table-responsive">
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
@@ -803,9 +811,11 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+                </div>
 
                 {/* question 6 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>6. Emotional health(nervousness, depression, etc)</strong></p>
+              <div class="table-responsive">   
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
@@ -933,9 +943,11 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+              </div>
 
                 {/* question 7 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>7. Feeling frustrated?</strong></p>
+              <div class="table-responsive">   
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
@@ -1063,13 +1075,15 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+              </div>
 
                 {/* save button here */}
               <div className="form-group" style={{textAlign:'center', marginBottom:'15px', marginLeft:'10px'}}>
+                {show}
                 <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}} type="submit">
                   Save
                 </button>
-                {show}
+                
               </div>
               
             </form>
