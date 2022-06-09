@@ -152,9 +152,9 @@ class App extends Component {
 
     let show;
     if(this.state.displayScore){
-      show = <p style={{color: 'green', fontSize:'20px',paddingTop:'25px', float:'right',marginRight:'10px'}}>Total scores: {this.state.totalScore} </p>
+      show = <p style={{color: 'green', fontSize:'15px',paddingTop:'25px', float:'left',marginRight:'10px'}}>Total scores: {this.state.totalScore} </p>
     }else if(this.state.displayScore === false){
-      show = <p style={{color: 'red', fontSize:'20px',paddingTop:'25px', float:'right',marginRight:'10px'}}> ***Please complete whole survey***</p>
+      show = <p style={{color: 'red', fontSize:'15px',paddingTop:'25px', float:'left',marginRight:'10px'}}> ***Please complete whole survey***</p>
     }
     return (
       <div className="container">
@@ -168,9 +168,10 @@ class App extends Component {
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
                                                     width:'100%',
                                                     margin: '10px auto',
-                                                    padding: '15px 15px',}}>
+                                                    padding: '15px 15px',
+                                                    borderRadius:'10px'}}>
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
-              <table className="table table-bordered border-dark">
+              <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -302,7 +303,7 @@ class App extends Component {
 {/* question 2 table here */}
 
 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>2. Ability to do physical activities such as walking, swimming, or other exiercise?</strong></p>
-              <table className="table table-bordered border-dark">
+              <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -426,7 +427,7 @@ class App extends Component {
 
 {/* question 3 table here */}
         <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>3. Entertainment activities such as going to a movie or concert?</strong> </p>
-        <table className="table table-bordered border-dark">
+        <table className="table table-bordered border-dark table-hover">
         <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -550,7 +551,7 @@ class App extends Component {
 
                 {/* question 4 table here */}
                 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</strong> </p>
-                <table className="table table-bordered border-dark">
+                <table className="table table-bordered border-dark table-hover">
                 <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -680,7 +681,7 @@ class App extends Component {
 
               {/* question 5 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>5. Participating in social activities outside your home?</strong></p>
-              <table className="table table-bordered border-dark">
+              <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -810,7 +811,7 @@ class App extends Component {
 
                 {/* question 6 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>6. Emotional health(nervousness, depression, etc)</strong></p>
-              <table className="table table-bordered border-dark">
+              <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -940,7 +941,7 @@ class App extends Component {
 
                 {/* question 7 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>7. Feeling frustrated?</strong></p>
-              <table className="table table-bordered border-dark">
+              <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -1069,7 +1070,7 @@ class App extends Component {
                 </table>
 
                 {/* save button here */}
-              <div className="form-group" style={{textAlign:'left', marginBottom:'15px', marginLeft:'10px'}}>
+              <div className="form-group" style={{textAlign:'center', marginBottom:'15px', marginLeft:'10px'}}>
                 <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}} type="submit">
                   Save
                 </button>
