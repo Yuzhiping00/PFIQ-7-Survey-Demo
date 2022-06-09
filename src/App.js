@@ -6,21 +6,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedOption: "",
-      scores:[],
+      selectedOption: "", // initially do not select any radio button
+      answers:[],
       displayScore: null,
       totalScore:0
     };
   }
 
-  // it is a method here
+  // handle radio button selection chnages
   handleOptionChange = changeEvent => {
+    // every time if clicking a radio button, total score message will disappear.
     this.setState({displayScore: null});
+    // set selectedOption to the event value
     this.setState({
       selectedOption: changeEvent.target.value
     });
 
-
+    // get score for each question based on the event target
     let eachScore;
 
     switch (changeEvent.target.value) {
@@ -40,110 +42,102 @@ class App extends Component {
         eachScore =  -1;  
     }
 
+    // create an object based on the event name, event value and obtained score
+
     let element = {};
     element.id = changeEvent.target.name;
     element.score = eachScore;
     element.value = changeEvent.target.value;
   
+    //if an object does not exists in the answers array
     let flag = false;
+
     let index;
-    for (let obj of this.state.scores) {
+
+    for (let obj of this.state.answers) {
+         // if current object exist in the answees array based on name
       if (obj.id === changeEvent.target.name) {
         flag = true;
-        index = this.state.scores.indexOf(obj);
+        // find the index of the oject with the same name
+        index = this.state.answers.indexOf(obj);
         break;
       }
     }
 
-    if(flag){
-      let newArr = [...this.state.scores];
+    if(flag){ // change the existing object score and value in the answers array
+      let newArr = [...this.state.answers];
       newArr[index].score = eachScore;
       newArr[index].value = changeEvent.target.value;
       this.setState({scores: newArr});
-    }else{
-      this.state.scores.push(element);
+    }else{ // if the current object does not exist, then add it to the answers array
+      this.state.answers.push(element);
     }
-    console.log(this.state.scores);
+    console.log(this.state.answers);
   };
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
+
     let sumScores = 0;
-    // for(let i = 0; i<= this.state.scores.length-1; i++){
-    //   sumScores = sumScores + (this.state.scores[i].score);
-    // }
-    let q1 =[], q2 =[], q3 =[], q4 =[], q5=[], q6=[], q7=[];
-    if(this.state.scores.length === 21){
+    
+    // create 3 arrays and each of them holds 7 scores based on filter baldder, bowel, vagina
+    let baldder_scores=[], bowel_scores=[], vagina_scores = [];
+
+    // when a patient complete 21 questions
+
+    if(this.state.answers.length === 21){
       this.setState({displayScore: true});
-      for(let i=0; i<this.state.scores.length; i++){
-        if(this.state.scores[i].id.includes("_1")){
-          q1.push(this.state.scores[i].score);
-        }else if(this.state.scores[i].id.includes("_2")){
-          q2.push(this.state.scores[i].score);
-        }else if(this.state.scores[i].id.includes("_3")){
-          q3.push(this.state.scores[i].score);
-        }else if(this.state.scores[i].id.includes("_4")){
-          q4.push(this.state.scores[i].score);
-        }else if(this.state.scores[i].id.includes("_5")){
-          q5.push(this.state.scores[i].score);
-        }else if(this.state.scores[i].id.includes("_6")){
-          q6.push(this.state.scores[i].score);
-        }else if(this.state.scores[i].id.includes("_7")){
-          q7.push(this.state.scores[i].score);
+
+      // add scores to 3 different array
+      for(let i=0; i<this.state.answers.length; i++){
+        if(this.state.answers[i].id.includes("baldder")){
+          baldder_scores.push(this.state.answers[i].score);
+        }else if(this.state.answers[i].id.includes("bowel")){
+          bowel_scores.push(this.state.answers[i].score);
+        }else if(this.state.answers[i].id.includes("vagina")){
+          vagina_scores.push(this.state.answers[i].score);
         }
       }
-      console.log("q1 = "+ q1);
-      console.log("q2 = "+ q2);
-      console.log("q3 = "+ q3);
-      console.log("q4 = "+ q4);
-      console.log("q5 = "+ q5);
-      console.log("q6 = "+ q6);
-      console.log("q7 = "+ q7);
+      console.log("baldder_scores = "+ baldder_scores);
+      console.log("bowel_scores = "+ bowel_scores);
+      console.log("vagina_scores = "+ vagina_scores);
+      
+      let subScore_baldder= 0; 
+      let subScore_bowel= 0; 
+      let subScore_vagina= 0; 
 
-      let q1_score= 0; 
-      let q2_score= 0; 
-      let q3_score= 0; 
-      let q4_score= 0; 
-      let q5_score= 0; 
-      let q6_score= 0; 
-      let q7_score= 0; 
+   
+      subScore_baldder = this.calculateEachCategory( baldder_scores);
+      console.log("subScore_baldder score = "+  subScore_baldder);
 
-      // for(let i =0; i<q1.length; i++){
-      //   q1_score += q1[i];
-      // }
-      q1_score = this.addForEachQuestion(q1);
-      console.log("q1 score = "+ q1_score);
-      q2_score = this.addForEachQuestion(q2);
-      console.log("q2 score = "+ q2_score);
-      q3_score = this.addForEachQuestion(q3);
-      console.log("q3 score = "+ q3_score);
-      q4_score = this.addForEachQuestion(q4);
-      console.log("q4 score = "+ q4_score);
-      q5_score = this.addForEachQuestion(q5);
-      console.log("q5 score = "+ q5_score);
-      q6_score = this.addForEachQuestion(q6);
-      console.log("q6 score = "+ q6_score);
-      q7_score = this.addForEachQuestion(q7);
-      console.log("q7 score = "+ q7_score);
+      subScore_bowel = this.calculateEachCategory(bowel_scores);
+      console.log("subScore_bowel score = "+  subScore_bowel);
 
-      // add all 7 scores
-      sumScores = (q1_score + q2_score + q3_score + q4_score + q5_score + q6_score + q7_score).toFixed(2);
+      subScore_vagina = this.calculateEachCategory(vagina_scores);
+      console.log("subScore_vagina = "+  subScore_vagina);
+     
+
+      // add all 3 category final result to come up with the total score
+      sumScores = (subScore_baldder + subScore_bowel + subScore_vagina).toFixed(2);
       this.setState({totalScore: sumScores});
       alert("Total score is: "+ sumScores);
       console.log("Total score is: "+ sumScores);
-    }else{
+    }else{ // if a patient forgot to fill any raido buttons
       this.setState({displayScore: false});
       alert("Please Complete Every Question in Survey");
     }
   };
 
-  // calculate each question score
-   addForEachQuestion= (question) =>{
+  // calculate each category score
+   calculateEachCategory= (category) =>{
      let value = 0;
-     for(let i= 0; i< question.length; i++){
-        value += question[i];
+     // get total score for specific catogory
+     for(let i= 0; i< category.length; i++){
+        value += category[i];
      }
-     let finalResult = value / 3 * 100 / 3;
+
+     // use formula to get final value for each category
+     let finalResult = value / 7 * (100 / 3);
      return finalResult; 
    }
 
@@ -158,8 +152,9 @@ class App extends Component {
     }
     return (
       <div className="container">
+        <p></p>
         <div id="heading">
-            <h1>PELVIC FLOOR IMPACT QUESTIONNAIRE</h1>
+            <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
             <h2>
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
