@@ -15,7 +15,7 @@ class App extends Component {
 
   // it is a method here
   handleOptionChange = changeEvent => {
-
+    this.setState({displayScore: null});
     this.setState({
       selectedOption: changeEvent.target.value
     });
@@ -127,7 +127,7 @@ class App extends Component {
       console.log("q7 score = "+ q7_score);
 
       // add all 7 scores
-      sumScores = q1_score + q2_score + q3_score + q4_score + q5_score + q6_score + q7_score;
+      sumScores = (q1_score + q2_score + q3_score + q4_score + q5_score + q6_score + q7_score).toFixed(2);
       this.setState({totalScore: sumScores});
       alert("Total score is: "+ sumScores);
       console.log("Total score is: "+ sumScores);
@@ -137,6 +137,7 @@ class App extends Component {
     }
   };
 
+  // calculate each question score
    addForEachQuestion= (question) =>{
      let value = 0;
      for(let i= 0; i< question.length; i++){
