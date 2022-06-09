@@ -120,10 +120,10 @@ class App extends Component {
       // add all 3 category final result to come up with the total score
       sumScores = (subScore_baldder + subScore_bowel + subScore_vagina).toFixed(2);
       this.setState({totalScore: sumScores});
-      alert("Total score is: "+ sumScores);
-      console.log("Total score is: "+ sumScores);
+      alert("Total Score is: "+ sumScores);
+      console.log("Total Score is: "+ sumScores);
     }else{ // if a patient forgot to fill any raido buttons
-      this.setState({displayScore: false});
+      // this.setState({displayScore: false});
       alert("Please Complete Every Question in Survey");
     }
   };
@@ -146,10 +146,10 @@ class App extends Component {
 
     let show;
     if(this.state.displayScore){
-      show = <p style={{color: 'green', fontSize:'15px',paddingTop:'25px', float:'left',marginRight:'10px'}}>Total scores: {this.state.totalScore} </p>
-    }else if(this.state.displayScore === false){
-      show = <p style={{color: 'red', fontSize:'15px',paddingTop:'25px', float:'left',marginRight:'10px'}}> ***Please complete whole survey***</p>
-    }
+      show = <p style={{color: 'hotpink', fontSize:'25px',paddingTop:'15px', textAlign:'center'}}>Total Score: {this.state.totalScore} </p>
+    }//else if(this.state.displayScore === false){
+    //   show = <p style={{color: 'red', fontSize:'25px',paddingTop:'15px', textAlign:'center'}}> ***Please complete whole survey***</p>
+    // }
     return (
       <div className="container">
         <p></p>
@@ -158,6 +158,7 @@ class App extends Component {
             <h2>
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
+            {show}
         </div>
           <div className="col-sm-12 col-md-10 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
@@ -1079,7 +1080,6 @@ class App extends Component {
 
                 {/* save button here */}
               <div className="form-group" style={{textAlign:'center', marginBottom:'15px', marginLeft:'10px'}}>
-                {show}
                 <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}} type="submit">
                   Save
                 </button>
