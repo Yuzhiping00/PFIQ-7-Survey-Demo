@@ -181,7 +181,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                               name="baldder_1" 
@@ -219,7 +219,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -258,7 +258,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -315,7 +315,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> <input type="radio" name="baldder_2" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
                       <td><input
                             type="radio"
@@ -347,7 +347,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -386,7 +386,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -441,7 +441,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> <input type="radio" name="baldder_3" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
                       <td><input
                             type="radio"
@@ -473,7 +473,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -512,7 +512,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -565,7 +565,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_4" 
@@ -603,7 +603,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -642,7 +642,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -697,7 +697,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_5" 
@@ -735,7 +735,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -774,7 +774,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -829,7 +829,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_6" 
@@ -867,7 +867,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -906,7 +906,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -961,7 +961,7 @@ class App extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_7" 
@@ -999,7 +999,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -1038,7 +1038,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
