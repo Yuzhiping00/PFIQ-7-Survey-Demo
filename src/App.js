@@ -152,36 +152,36 @@ class App extends Component {
     // }
     return (
       <div className="container">
-        <div id="heading">
+        <div id="heading" className="col-xs-12 col-md-12 col-lg-10">
             <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
             <h2>
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
             {show}
         </div>
-          <div className="col-sm-12 col-md-10 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >
+          <div  className="col-xs-12 col-md-12 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
                                                     width:'100%',
-                                                    margin: '15px auto',
+                                                    margin: '0px auto',
                                                     padding: '15px 15px',
                                                     marginBottom:'15px',
                                                     borderRadius:'10px'}}>
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'5px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
                                 
-              <div class="table-responsive">                                      
+              <div className="table-responsive">                                      
               <table className="table table-bordered border-dark table-hover ">
               <thead className="table-success">
                     <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
+                      <th scope="col" className="text-nowrap"></th>
+                      <th scope="col" className="text-nowrap">Not at all</th>
+                      <th scope="col" className="text-nowrap">Somewhat</th>
+                      <th scope="col" className="text-nowrap">Moderately</th>
+                      <th scope="col" className="text-nowrap">Quite a bit</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                               name="baldder_1" 
@@ -219,7 +219,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -258,7 +258,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -302,20 +302,20 @@ class App extends Component {
 {/* question 2 table here */}
 
 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>2. Ability to do physical activities such as walking, swimming, or other exiercise?</strong></p>
-<div class="table-responsive">   
+<div className="table-responsive">   
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
-                    <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
+                   <tr>
+                      <th scope="col" className="text-nowrap"></th>
+                      <th scope="col" className="text-nowrap">Not at all</th>
+                      <th scope="col" className="text-nowrap">Somewhat</th>
+                      <th scope="col" className="text-nowrap">Moderately</th>
+                      <th scope="col" className="text-nowrap">Quite a bit</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> <input type="radio" name="baldder_2" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
                       <td><input
                             type="radio"
@@ -347,7 +347,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -386,7 +386,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -428,20 +428,20 @@ class App extends Component {
 
 {/* question 3 table here */}
         <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>3. Entertainment activities such as going to a movie or concert?</strong> </p>
-        <div class="table-responsive">   
+        <div className="table-responsive">   
         <table className="table table-bordered border-dark table-hover">
         <thead className="table-success">
-                    <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
-                    </tr>
+                <tr>
+                  <th scope="col" className="text-nowrap"></th>
+                  <th scope="col" className="text-nowrap">Not at all</th>
+                  <th scope="col" className="text-nowrap">Somewhat</th>
+                  <th scope="col" className="text-nowrap">Moderately</th>
+                  <th scope="col" className="text-nowrap">Quite a bit</th>
+                </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> <input type="radio" name="baldder_3" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
                       <td><input
                             type="radio"
@@ -473,7 +473,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -512,7 +512,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -556,16 +556,16 @@ class App extends Component {
                 <table className="table table-bordered border-dark table-hover">
                 <thead className="table-success">
                     <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
+                      <th scope="col" className="text-nowrap"></th>
+                      <th scope="col" className="text-nowrap">Not at all</th>
+                      <th scope="col" className="text-nowrap">Somewhat</th>
+                      <th scope="col" className="text-nowrap">Moderately</th>
+                      <th scope="col" className="text-nowrap">Quite a bit</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_4" 
@@ -603,7 +603,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -642,7 +642,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -687,17 +687,17 @@ class App extends Component {
               <div className="table-responsive">
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
-                    <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
+                   <tr>
+                      <th scope="col" className="text-nowrap"></th>
+                      <th scope="col" className="text-nowrap">Not at all</th>
+                      <th scope="col" className="text-nowrap">Somewhat</th>
+                      <th scope="col" className="text-nowrap">Moderately</th>
+                      <th scope="col" className="text-nowrap">Quite a bit</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_5" 
@@ -735,7 +735,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -774,7 +774,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -816,20 +816,20 @@ class App extends Component {
 
                 {/* question 6 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>6. Emotional health(nervousness, depression, etc)</strong></p>
-              <div class="table-responsive">   
+              <div className="table-responsive">   
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
+                      <th scope="col" className="text-nowrap"></th>
+                      <th scope="col" className="text-nowrap">Not at all</th>
+                      <th scope="col" className="text-nowrap">Somewhat</th>
+                      <th scope="col" className="text-nowrap">Moderately</th>
+                      <th scope="col" className="text-nowrap">Quite a bit</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_6" 
@@ -867,7 +867,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -906,7 +906,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -948,20 +948,20 @@ class App extends Component {
 
                 {/* question 7 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>7. Feeling frustrated?</strong></p>
-              <div class="table-responsive">   
+              <div className="table-responsive">   
               <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Not at all</th>
-                      <th scope="col">Somewhat</th>
-                      <th scope="col">Moderately</th>
-                      <th scope="col">Quite a bit</th>
+                      <th scope="col" className="text-nowrap"></th>
+                      <th scope="col" className="text-nowrap">Not at all</th>
+                      <th scope="col" className="text-nowrap">Somewhat</th>
+                      <th scope="col" className="text-nowrap">Moderately</th>
+                      <th scope="col" className="text-nowrap">Quite a bit</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"  style={{textAlign:'left', marginLeft:'10px'}}>Bladder or Urine</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
                           name="baldder_7" 
@@ -999,7 +999,7 @@ class App extends Component {
 
                     <tr>
 
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Bowel or Rectum</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Bowel or Rectum</th>
                       <td> 
                         <input 
                           type="radio" 
@@ -1038,7 +1038,7 @@ class App extends Component {
                     </tr>
 
                     <tr>
-                      <th scope="row" style={{textAlign:'left', marginLeft:'10px'}}>Vagina</th>
+                      <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'20%'}}>Vagina</th>
                       <td> 
                         <input 
                           type="radio" 
