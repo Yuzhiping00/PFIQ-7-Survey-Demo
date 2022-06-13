@@ -152,7 +152,6 @@ class App extends Component {
     // }
     return (
       <div className="container">
-        <p></p>
         <div id="heading">
             <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
             <h2>
@@ -163,13 +162,14 @@ class App extends Component {
           <div className="col-sm-12 col-md-10 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
                                                     width:'100%',
-                                                    margin: '10px auto',
+                                                    margin: '15px auto',
                                                     padding: '15px 15px',
+                                                    marginBottom:'15px',
                                                     borderRadius:'10px'}}>
-              <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
+              <p style={{textAlign:'left', marginBottom:'15px', marginTop:'5px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
                                 
               <div class="table-responsive">                                      
-              <table className="table table-bordered border-dark table-hover">
+              <table className="table table-bordered border-dark table-hover ">
               <thead className="table-success">
                     <tr>
                       <th scope="col"></th>
@@ -1079,9 +1079,9 @@ class App extends Component {
               </div>
 
                 {/* save button here */}
-              <div className="form-group" style={{textAlign:'center', marginBottom:'15px', marginLeft:'10px'}}>
-                <button className="btn btn-success" style={{width:'100px', marginTop:'25px'}} type="submit">
-                  Save
+              <div className="form-group" style={{textAlign:'center', marginBottom:'10px', marginLeft:'10px'}}>
+                <button className="btn" style={{width:'100px', marginTop:'10px',backgroundColor:'#d1e7dd'}} type="submit">
+                 <strong>Save</strong> 
                 </button>
                 
               </div>
