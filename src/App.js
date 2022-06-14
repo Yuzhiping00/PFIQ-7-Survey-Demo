@@ -43,11 +43,6 @@ class App extends Component {
     }
 
     // create an object based on the event name, event value and obtained score
-
-    let element = {};
-    element.id = changeEvent.target.name;
-    element.score = eachScore;
-    element.value = changeEvent.target.value;
   
     //if an object does not exists in the answers array
     let flag = false;
@@ -55,8 +50,8 @@ class App extends Component {
     let index;
 
     for (let obj of this.state.answers) {
-         // if current object exist in the answees array based on name
-      if (obj.id === changeEvent.target.name) {
+         // if current object exist in the answers array based on name
+      if (obj.name === changeEvent.target.name) {
         flag = true;
         // find the index of the oject with the same name
         index = this.state.answers.indexOf(obj);
@@ -68,9 +63,14 @@ class App extends Component {
       let newArr = [...this.state.answers];
       newArr[index].score = eachScore;
       newArr[index].value = changeEvent.target.value;
-      this.setState({scores: newArr});
+      this.setState({answers: newArr});
     }else{ // if the current object does not exist, then add it to the answers array
-      this.state.answers.push(element);
+      let answer = {};
+      answer.name = changeEvent.target.name;
+      answer.score = eachScore;
+      answer.value = changeEvent.target.value;
+
+      this.state.answers.push(answer);
     }
     console.log(this.state.answers);
   };
@@ -80,8 +80,8 @@ class App extends Component {
 
     let sumScores = 0;
     
-    // create 3 arrays and each of them holds 7 scores based on filter baldder, bowel, vagina
-    let baldder_scores=[], bowel_scores=[], vagina_scores = [];
+    // create 3 arrays and each of them holds 7 scores based on filter bladder, bowel, vagina
+    let bladder_scores=[], bowel_scores=[], vagina_scores = [];
 
     // when a patient complete 21 questions
 
@@ -90,25 +90,26 @@ class App extends Component {
 
       // add scores to 3 different array
       for(let i=0; i<this.state.answers.length; i++){
-        if(this.state.answers[i].id.includes("baldder")){
-          baldder_scores.push(this.state.answers[i].score);
-        }else if(this.state.answers[i].id.includes("bowel")){
+        if(this.state.answers[i].name.includes("bladder")){
+          bladder_scores.push(this.state.answers[i].score);
+        }else if(this.state.answers[i].name.includes("bowel")){
           bowel_scores.push(this.state.answers[i].score);
-        }else if(this.state.answers[i].id.includes("vagina")){
+        }else if(this.state.answers[i].name.includes("vagina")){
           vagina_scores.push(this.state.answers[i].score);
         }
       }
-      console.log("baldder_scores = "+ baldder_scores);
+      console.log("bladder_scores = "+ bladder_scores);
       console.log("bowel_scores = "+ bowel_scores);
       console.log("vagina_scores = "+ vagina_scores);
       
-      let subScore_baldder= 0; 
+      let subScore_bladder= 0; 
       let subScore_bowel= 0; 
       let subScore_vagina= 0; 
 
+      // calculate 3 differnt types score
    
-      subScore_baldder = this.calculateEachCategory( baldder_scores);
-      console.log("subScore_baldder score = "+  subScore_baldder);
+      subScore_bladder = this.calculateEachCategory( bladder_scores);
+      console.log("subScore_bladder score = "+  subScore_bladder);
 
       subScore_bowel = this.calculateEachCategory(bowel_scores);
       console.log("subScore_bowel score = "+  subScore_bowel);
@@ -118,13 +119,13 @@ class App extends Component {
      
 
       // add all 3 category final result to come up with the total score
-      sumScores = (subScore_baldder + subScore_bowel + subScore_vagina).toFixed(2);
+      sumScores = (subScore_bladder + subScore_bowel + subScore_vagina).toFixed(2);
       this.setState({totalScore: sumScores});
       alert("Total Score is: "+ sumScores);
       console.log("Total Score is: "+ sumScores);
     }else{ // if a patient forgot to fill any raido buttons
       // this.setState({displayScore: false});
-      alert("Please Complete Every Question in Survey");
+      alert("Please Answer Every Question in Survey");
     }
   };
 
@@ -146,7 +147,7 @@ class App extends Component {
 
     let show;
     if(this.state.displayScore){
-      show = <p style={{color: 'hotpink', fontSize:'25px',paddingTop:'15px', textAlign:'center'}}>Total Score: {this.state.totalScore} </p>
+      show = <p style={{color: 'hotpink', fontSize:'30px',paddingTop:'10px', textAlign:'center'}}>Total Score: {this.state.totalScore} </p>
     }//else if(this.state.displayScore === false){
     //   show = <p style={{color: 'red', fontSize:'25px',paddingTop:'15px', textAlign:'center'}}> ***Please complete whole survey***</p>
     // }
@@ -184,14 +185,14 @@ class App extends Component {
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
-                              name="baldder_1" 
+                              name="bladder_1" 
                               value="Not at all" 
                               onChange={this.handleOptionChange} 
                               className="form-check-input" />
                       </td>
                       <td><input
                             type="radio"
-                            name="baldder_1"
+                            name="bladder_1"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -199,7 +200,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_1"
+                            name="bladder_1"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -209,7 +210,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_1"
+                            name="bladder_1"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
@@ -316,10 +317,10 @@ class App extends Component {
                   <tbody>
                     <tr>
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
-                      <td> <input type="radio" name="baldder_2" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
+                      <td> <input type="radio" name="bladder_2" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
                       <td><input
                             type="radio"
-                            name="baldder_2"
+                            name="bladder_2"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -327,7 +328,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_2"
+                            name="bladder_2"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -337,7 +338,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_2"
+                            name="bladder_2"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
@@ -442,10 +443,10 @@ class App extends Component {
                   <tbody>
                     <tr>
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
-                      <td> <input type="radio" name="baldder_3" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
+                      <td> <input type="radio" name="bladder_3" value="Not at all" onChange={this.handleOptionChange} className="form-check-input" /></td>
                       <td><input
                             type="radio"
-                            name="baldder_3"
+                            name="bladder_3"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -453,7 +454,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_3"
+                            name="bladder_3"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -463,7 +464,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_3"
+                            name="bladder_3"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
@@ -568,14 +569,14 @@ class App extends Component {
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
-                          name="baldder_4" 
+                          name="bladder_4" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
                           className="form-check-input" />
                       </td>
                       <td><input
                             type="radio"
-                            name="baldder_4"
+                            name="bladder_4"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -583,7 +584,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_4"
+                            name="bladder_4"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -593,7 +594,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_4"
+                            name="bladder_4"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
@@ -700,14 +701,14 @@ class App extends Component {
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
-                          name="baldder_5" 
+                          name="bladder_5" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
                           className="form-check-input" />
                       </td>
                       <td><input
                             type="radio"
-                            name="baldder_5"
+                            name="bladder_5"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -715,7 +716,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_5"
+                            name="bladder_5"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -725,7 +726,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_5"
+                            name="bladder_5"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
@@ -832,14 +833,14 @@ class App extends Component {
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
-                          name="baldder_6" 
+                          name="bladder_6" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
                           className="form-check-input" />
                       </td>
                       <td><input
                             type="radio"
-                            name="baldder_6"
+                            name="bladder_6"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -847,7 +848,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_6"
+                            name="bladder_6"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -857,7 +858,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_6"
+                            name="bladder_6"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
@@ -964,14 +965,14 @@ class App extends Component {
                       <th scope="row" className="text-nowrap" style={{textAlign:'left', marginLeft:'10px', width:'15%'}}>Bladder or Urine</th>
                       <td> 
                         <input type="radio" 
-                          name="baldder_7" 
+                          name="bladder_7" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
                           className="form-check-input" />
                       </td>
                       <td><input
                             type="radio"
-                            name="baldder_7"
+                            name="bladder_7"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
@@ -979,7 +980,7 @@ class App extends Component {
                       <td> 
                         <input
                             type="radio"
-                            name="baldder_7"
+                            name="bladder_7"
                             value="Moderately"
                             
                             onChange={this.handleOptionChange}
@@ -989,7 +990,7 @@ class App extends Component {
                       <td>
                           <input
                             type="radio"
-                            name="baldder_7"
+                            name="bladder_7"
                             value="Quite a bit"
                             className="form-check-input"
                             onChange={this.handleOptionChange}
