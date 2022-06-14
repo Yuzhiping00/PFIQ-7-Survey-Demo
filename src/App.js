@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       selectedOption: "", // initially do not select any radio button
-      answers:[],
+      answers:[], // an array of answer objects
       displayScore: null,
       totalScore:0
     };
@@ -1049,7 +1049,7 @@ class App extends Component {
                       </td>
                       <td><input
                             type="radio"
-                            name="vagina_6"
+                            name="vagina_7"
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
