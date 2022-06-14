@@ -429,8 +429,8 @@ class App extends Component {
 
 {/* question 3 table here */}
         <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>3. Entertainment activities such as going to a movie or concert?</strong> </p>
-        <div className="table-responsive">   
-        <table className="table table-bordered border-dark table-hover">
+        <div className="table-responsive">                                      
+        <table className="table table-bordered border-dark table-hover ">
         <thead className="table-success">
                 <tr>
                   <th scope="col" className="text-nowrap"></th>
@@ -551,10 +551,12 @@ class App extends Component {
                     </tr>
                   </tbody>
                 </table>
+              </div>
 
                 {/* question 4 table here */}
                 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</strong> </p>
-                <table className="table table-bordered border-dark table-hover">
+                <div className="table-responsive">                                      
+                  <table className="table table-bordered border-dark table-hover ">
                 <thead className="table-success">
                     <tr>
                       <th scope="col" className="text-nowrap"></th>
