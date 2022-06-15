@@ -170,7 +170,7 @@ class App extends Component {
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'5px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
                                 
               <div className="table-responsive">                                      
-              <table className="table table-bordered border-dark table-hover ">
+              <table className="table table-bordered border-dark table-hover">
               <thead className="table-success">
                     <tr>
                       <th scope="col" className="text-nowrap"></th>
