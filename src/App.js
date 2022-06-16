@@ -164,24 +164,24 @@ class App extends Component {
                                                     borderRadius:'10px'}}>
 
                 <div className="row" style={{textAlign:"left", marginBottom:"10px"}}>
-                      <div className="col-md-2">
-                        <label htmlFor="firstname" className="form-label"><strong>First Name</strong></label>
+                      <div className="col-md-6 col-lg-2" style={{marginBottom:"10px"}}>
+                        <label htmlFor="firstname" className="form-label text-nowrap"><strong>First Name</strong></label>
                         <input type="text" className="form-control" id="firstname" value={this.state.firstName} onChange={(e)=>{this.setState({firstName:e.target.value})}} required/>
                       </div>
-                      <div className="col-md-2">
+                      <div className="col-md-6 col-lg-2 "style={{marginBottom:"10px"}}>
                         <label htmlFor="lastname" className="form-label"><strong>Last Name</strong></label>
                         <input type="text" className="form-control" id="lastname" value={this.state.lastName} onChange={(e)=>{this.setState({lastName:e.target.value})}} required/>
                       </div>
                   
-                    <div className="col-md-3">
+                    <div className="col-md-6 col-lg-3" style={{marginBottom:"10px"}}>
                         <label htmlFor="date" className="form-label"><strong>Date/Time</strong></label>
-                        <input type="datetime-local" className="form-control" id="date" required/>
+                        <input type="date" className="form-control" id="date" required/>
                       </div>
-                      <div className="col-md-3">
+                      <div className="col-md-6 col-lg-3" style={{marginBottom:"10px"}}>
                         <label htmlFor="dob" className="form-label"><strong>Date of Birth</strong></label>
                         <input type="date" className="form-control" id="dob" required/>
                       </div>
-                      <div className="col-md-2">
+                      <div className="col-md-5 col-lg-2" style={{marginBottom:"10px"}}>
                         <label htmlFor="score" className="form-label"><strong>Score</strong></label>
                         <p style={{border:"1px solid #ced4da", height:"38px", borderRadius:'5px', paddingLeft:'10px', paddingTop:"5px"}}>{this.state.totalScore}</p>
                       </div>
