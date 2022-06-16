@@ -145,39 +145,17 @@ class App extends Component {
 
   render() {
 
-    let show;
-    if(this.state.displayScore){
-      show = <p style={{color: 'hotpink', fontSize:'30px',paddingTop:'10px', textAlign:'center'}}>Total Score: {this.state.totalScore} </p>
-    }//else if(this.state.displayScore === false){
-    //   show = <p style={{color: 'red', fontSize:'25px',paddingTop:'15px', textAlign:'center'}}> ***Please complete whole survey***</p>
-    // }
     return (
       <div className="container">
         <div id="heading" className="col-xs-12 col-md-12 col-lg-10">
             <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
-            <h2>
-                How do the following symptoms or conditions usually affect each of the three areas below?
-            </h2>
-            <div className="row">
-              <div class="col-md-2">
-                <label for="inputEmail4" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="inputEmail4"/>
-              </div>
-              <div class="col-md-2">
-                <label for="inputPassword4" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="inputPassword4"/>
-              </div>
-           
-             <div class="col-md-4">
-                <label for="inputEmail4" class="form-label">Date</label>
-                <input type="datetime-local" class="form-control" id="inputEmail4"/>
-              </div>
-              <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Date of Birth</label>
-                <input type="date" class="form-control" id="inputPassword4"/>
-              </div>
-            </div>
-            {show}
+            <p>
+            <strong>Instructions:</strong> Some women find that bladder, bowel, or vaginal symptoms affect their
+            activities, relationships, and feelings. For each question, check the response that best
+            describes how much your activities, relationships, or feelings have been affected by your
+            bladder, bowel, or vaginal symptoms or conditions over the last 3 months. Please
+            make sure you mark an answer in all 3 columns for each question.
+            </p>
         </div>
         
        
@@ -188,6 +166,30 @@ class App extends Component {
                                                     padding: '15px 15px',
                                                     marginBottom:'15px',
                                                     borderRadius:'10px'}}>
+
+                <div className="row" style={{textAlign:"left", marginBottom:"10px"}}>
+                      <div className="col-md-2">
+                        <label htmlFor="firstname" className="form-label"><strong>First Name</strong></label>
+                        <input type="text" className="form-control" id="firstname" required/>
+                      </div>
+                      <div className="col-md-2">
+                        <label htmlFor="lastname" className="form-label"><strong>Last Name</strong></label>
+                        <input type="text" className="form-control" id="lastname" required/>
+                      </div>
+                  
+                    <div className="col-md-3">
+                        <label htmlFor="date" className="form-label"><strong>Date</strong></label>
+                        <input type="datetime-local" className="form-control" id="date" required/>
+                      </div>
+                      <div className="col-md-3">
+                        <label htmlFor="dob" className="form-label"><strong>Date of Birth</strong></label>
+                        <input type="date" className="form-control" id="dob" required/>
+                      </div>
+                      <div className="col-md-2">
+                        <label htmlFor="score" className="form-label"><strong>Score</strong></label>
+                        <p style={{border:"1px solid #ced4da", height:"38px", borderRadius:'5px', paddingLeft:'10px', paddingTop:"5px"}}>{this.state.totalScore}</p>
+                      </div>
+                </div>                                       
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'5px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
                                 
               <div className="table-responsive">                                      
