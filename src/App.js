@@ -207,7 +207,8 @@ class App extends Component {
                               name="bladder_1" 
                               value="Not at all" 
                               onChange={this.handleOptionChange} 
-                              className="form-check-input" />
+                              className="form-check-input" 
+                              required/>
                       </td>
                       <td><input
                             type="radio"
@@ -246,7 +247,8 @@ class App extends Component {
                           name="bowel_1" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input" 
+                           required/>
                       </td>
                       <td><input
                             type="radio"
@@ -285,7 +287,8 @@ class App extends Component {
                           name="vagina_1" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input" 
+                           required/>
                       </td>
                       <td><input
                             type="radio"
@@ -343,6 +346,7 @@ class App extends Component {
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
+                            required
                           /></td>
                       <td> 
                         <input
@@ -374,7 +378,8 @@ class App extends Component {
                           name="bowel_2" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input" 
+                           required/>
                       </td>
                       <td><input
                             type="radio"
@@ -413,7 +418,8 @@ class App extends Component {
                           name="vagina_2" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input" 
+                           required/>
                       </td>
                       <td><input
                             type="radio"
@@ -469,6 +475,7 @@ class App extends Component {
                             value="Somewhat"
                             onChange={this.handleOptionChange}
                             className="form-check-input"
+                            required
                           /></td>
                       <td> 
                         <input
@@ -500,7 +507,8 @@ class App extends Component {
                           name="bowel_3" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required />
                       </td>
                       <td><input
                             type="radio"
@@ -539,7 +547,8 @@ class App extends Component {
                           name="vagina_3" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required />
                       </td>
                       <td><input
                             type="radio"
@@ -593,7 +602,8 @@ class App extends Component {
                           name="bladder_4" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
-                          className="form-check-input" />
+                          className="form-check-input"
+                          required  />
                       </td>
                       <td><input
                             type="radio"
@@ -632,7 +642,8 @@ class App extends Component {
                           name="bowel_4" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required  />
                       </td>
                       <td><input
                             type="radio"
@@ -671,7 +682,8 @@ class App extends Component {
                           name="vagina_4" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required  />
                       </td>
                       <td><input
                             type="radio"
@@ -725,7 +737,8 @@ class App extends Component {
                           name="bladder_5" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
-                          className="form-check-input" />
+                          className="form-check-input"
+                          required  />
                       </td>
                       <td><input
                             type="radio"
@@ -764,7 +777,8 @@ class App extends Component {
                           name="bowel_5" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input" 
+                           required />
                       </td>
                       <td><input
                             type="radio"
@@ -803,7 +817,8 @@ class App extends Component {
                           name="vagina_5" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required  />
                       </td>
                       <td><input
                             type="radio"
@@ -857,7 +872,8 @@ class App extends Component {
                           name="bladder_6" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
-                          className="form-check-input" />
+                          className="form-check-input"
+                          required  />
                       </td>
                       <td><input
                             type="radio"
@@ -896,7 +912,8 @@ class App extends Component {
                           name="bowel_6" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required  />
                       </td>
                       <td><input
                             type="radio"
@@ -935,7 +952,8 @@ class App extends Component {
                           name="vagina_6" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input" 
+                           required />
                       </td>
                       <td><input
                             type="radio"
@@ -989,7 +1007,8 @@ class App extends Component {
                           name="bladder_7" 
                           value="Not at all" 
                           onChange={this.handleOptionChange} 
-                          className="form-check-input" />
+                          className="form-check-input" 
+                          required />
                       </td>
                       <td><input
                             type="radio"
@@ -1028,7 +1047,8 @@ class App extends Component {
                           name="bowel_7" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required  />
                       </td>
                       <td><input
                             type="radio"
@@ -1067,7 +1087,8 @@ class App extends Component {
                           name="vagina_7" 
                           value="Not at all"
                            onChange={this.handleOptionChange} 
-                           className="form-check-input" />
+                           className="form-check-input"
+                           required  />
                       </td>
                       <td><input
                             type="radio"
