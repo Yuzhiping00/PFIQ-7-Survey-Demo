@@ -28,7 +28,7 @@
     
   }
 
-  input[type='radio']:after {
+  /* input[type='radio']:after {
     width: 20px;
     height: 20px;
     border-radius: 20px;
@@ -56,5 +56,11 @@ input[type='radio']:checked:after {
     visibility: visible;
     border: 2px solid white;
     
-}
+} */
+
+  input[type="radio"]{
+    border: 2px solid rgb(133, 127, 127);
+    width: 20px;
+    height: 20px;
+  }
 
