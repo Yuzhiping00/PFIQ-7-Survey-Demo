@@ -158,8 +158,29 @@ class App extends Component {
             <h2>
                 How do the following symptoms or conditions usually affect each of the three areas below?
             </h2>
+            <div className="row">
+              <div class="col-md-2">
+                <label for="inputEmail4" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="inputEmail4"/>
+              </div>
+              <div class="col-md-2">
+                <label for="inputPassword4" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="inputPassword4"/>
+              </div>
+           
+             <div class="col-md-4">
+                <label for="inputEmail4" class="form-label">Date</label>
+                <input type="datetime-local" class="form-control" id="inputEmail4"/>
+              </div>
+              <div class="col-md-4">
+                <label for="inputPassword4" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="inputPassword4"/>
+              </div>
+            </div>
             {show}
         </div>
+        
+       
           <div  className="col-xs-12 col-md-12 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >
             <form onSubmit={this.handleFormSubmit} style={{boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)", backgroundColor: '#fff',
                                                     width:'100%',
