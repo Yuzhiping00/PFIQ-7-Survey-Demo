@@ -8,15 +8,14 @@ class App extends Component {
     this.state = {
       selectedOption: "", // initially do not select any radio button
       answers:[], // an array of answer objects
-      displayScore: null,
-      totalScore:0
+      totalScore:0,
+      firstName:"",
+      lastName:"",
     };
   }
 
   // handle radio button selection chnages
   handleOptionChange = changeEvent => {
-    // every time if clicking a radio button, total score message will disappear.
-    this.setState({displayScore: null});
     // set selectedOption to the event value
     this.setState({
       selectedOption: changeEvent.target.value
@@ -86,8 +85,6 @@ class App extends Component {
     // when a patient complete 21 questions
 
     if(this.state.answers.length === 21){
-      this.setState({displayScore: true});
-
       // add scores to 3 different array
       for(let i=0; i<this.state.answers.length; i++){
         if(this.state.answers[i].name.includes("bladder")){
@@ -121,11 +118,10 @@ class App extends Component {
       // add all 3 category final result to come up with the total score
       sumScores = (subScore_bladder + subScore_bowel + subScore_vagina).toFixed(2);
       this.setState({totalScore: sumScores});
-      alert("Total Score is: "+ sumScores);
+      alert("Hi, "+ this.state.firstName+" "+ this.state.lastName+ ", your total score is: "+ sumScores);
       console.log("Total Score is: "+ sumScores);
     }else{ // if a patient forgot to fill any raido buttons
-      // this.setState({displayScore: false});
-      alert("Please Answer Every Question in Survey");
+      alert("Hi, "+ this.state.firstName+" "+ this.state.lastName+ ", please answer every question in this survey before submit it!");
     }
   };
 
@@ -170,15 +166,15 @@ class App extends Component {
                 <div className="row" style={{textAlign:"left", marginBottom:"10px"}}>
                       <div className="col-md-2">
                         <label htmlFor="firstname" className="form-label"><strong>First Name</strong></label>
-                        <input type="text" className="form-control" id="firstname" required/>
+                        <input type="text" className="form-control" id="firstname" value={this.state.firstName} onChange={(e)=>{this.setState({firstName:e.target.value})}} required/>
                       </div>
                       <div className="col-md-2">
                         <label htmlFor="lastname" className="form-label"><strong>Last Name</strong></label>
-                        <input type="text" className="form-control" id="lastname" required/>
+                        <input type="text" className="form-control" id="lastname" value={this.state.lastName} onChange={(e)=>{this.setState({lastName:e.target.value})}} required/>
                       </div>
                   
                     <div className="col-md-3">
-                        <label htmlFor="date" className="form-label"><strong>Date</strong></label>
+                        <label htmlFor="date" className="form-label"><strong>Date/Time</strong></label>
                         <input type="datetime-local" className="form-control" id="date" required/>
                       </div>
                       <div className="col-md-3">
