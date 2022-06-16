@@ -1,7 +1,9 @@
 
 import React, { Component } from "react";
 import './App.css';
-
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+import Typography from '@mui/material/Typography';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +13,7 @@ class App extends Component {
       totalScore:0,
       firstName:"",
       lastName:"",
+      progress:0,
     };
   }
 
@@ -72,6 +75,8 @@ class App extends Component {
       this.state.answers.push(answer);
     }
     console.log(this.state.answers);
+    let roundNumber = Math.round((this.state.answers.length)/21 *100);
+    this.setState({progress:roundNumber});
   };
 
   handleFormSubmit = formSubmitEvent => {
@@ -152,6 +157,21 @@ class App extends Component {
             bladder, bowel, or vaginal symptoms or conditions over the last 3 months. Please
             make sure you mark an answer in all 3 columns for each question.
             </p>
+            {/* <Box sx={{ width: '100%' }}>
+              <LinearProgress variant="determinate" color="secondary" style={{height: '12px'}} value={this.state.progress} />
+              <span>{this.state.progress} %</span>
+            </Box> */}
+            <div>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ width: '100%', mr: 1 }}>
+                  <LinearProgress variant="determinate"  style={{height: '12px'}} value={this.state.progress}/>
+                </Box>
+                <Box sx={{ minWidth: 45 }}>
+                  <Typography variant="body2" color="text.secondary"><strong>{this.state.progress} %</strong></Typography>
+                </Box>
+              </Box>
+            </div>
+          
         </div>
         
        
