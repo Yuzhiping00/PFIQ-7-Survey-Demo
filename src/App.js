@@ -148,9 +148,9 @@ class App extends Component {
 
     return (
       <div className="container">
-        <div id="heading" className="col-xs-12 col-md-12 col-lg-10">
+        <div id="heading" className="col-xs-12 col-md-12 col-lg-10" style={{position:'sticky', backgroundColor:'white', top:'0px'}}>
             <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
-            <p>
+            <p style={{paddingLeft:'15px', paddingRight: '15px'}}>
             <strong>Instructions:</strong> Some women find that bladder, bowel, or vaginal symptoms affect their
             activities, relationships, and feelings. For each question, check the response that best
             describes how much your activities, relationships, or feelings have been affected by your
@@ -161,12 +161,12 @@ class App extends Component {
               <LinearProgress variant="determinate" color="secondary" style={{height: '12px'}} value={this.state.progress} />
               <span>{this.state.progress} %</span>
             </Box> */}
-            <div>
+            <div style={{paddingLeft:'15px', paddingRight: '15px'}}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ width: '100%', mr: 1 }}>
                   <LinearProgress variant="determinate"  style={{height: '12px'}} value={this.state.progress}/>
                 </Box>
-                <Box sx={{ minWidth: 45 }}>
+                <Box sx={{ minWidth: 45, textAlign:'right'}}>
                   <Typography variant="body2" color="text.secondary"><strong>{this.state.progress} %</strong></Typography>
                 </Box>
               </Box>
