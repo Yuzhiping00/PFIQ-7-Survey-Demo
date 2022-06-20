@@ -24,7 +24,7 @@ class App extends Component {
       selectedOption: changeEvent.target.value
     });
 
-    // get score for each question based on the event target
+    // get score for each option based on the event target
     let eachScore;
 
     switch (changeEvent.target.value) {
@@ -75,6 +75,7 @@ class App extends Component {
       this.state.answers.push(answer);
     }
     console.log(this.state.answers);
+    // this is used to calculate progress and total number of questions is 21
     let roundNumber = Math.round((this.state.answers.length)/21 *100);
     this.setState({progress:roundNumber});
   };
@@ -102,7 +103,8 @@ class App extends Component {
       }
       console.log("bladder_scores = "+ bladder_scores);
       console.log("bowel_scores = "+ bowel_scores);
-      console.log("vagina_scores = "+ vagina_scores);
+      console.log(`vagina_scores = ${vagina_scores}`)
+      //console.log("vagina_scores = "+ vagina_scores);
       
       let subScore_bladder= 0; 
       let subScore_bowel= 0; 
@@ -148,7 +150,7 @@ class App extends Component {
 
     return (
       <div className="container">
-        <div id="heading" className="col-xs-12 col-md-12 col-lg-10" style={{position:'sticky', backgroundColor:'white', top:'0px'}}>
+        <div id="heading" className="col-xs-12 col-md-12 col-lg-10" style={{borderRadius:'10px', position:'sticky', backgroundColor:'white', top:'0px',  boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)"}}>
             <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
             <p style={{paddingLeft:'15px', paddingRight: '15px'}}>
             <strong>Instructions:</strong> Some women find that bladder, bowel, or vaginal symptoms affect their
@@ -157,10 +159,7 @@ class App extends Component {
             bladder, bowel, or vaginal symptoms or conditions over the last 3 months. Please
             make sure you mark an answer in all 3 columns for each question.
             </p>
-            {/* <Box sx={{ width: '100%' }}>
-              <LinearProgress variant="determinate" color="secondary" style={{height: '12px'}} value={this.state.progress} />
-              <span>{this.state.progress} %</span>
-            </Box> */}
+        
             <div style={{paddingLeft:'15px', paddingRight: '15px'}}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ width: '100%', mr: 1 }}>
@@ -183,25 +182,25 @@ class App extends Component {
                                                     marginBottom:'15px',
                                                     borderRadius:'10px'}}>
 
-                <div className="row" style={{textAlign:"left", marginBottom:"10px"}}>
-                      <div className="col-md-6 col-lg-2" style={{marginBottom:"10px"}}>
+                <div className="row gx-5" style={{textAlign:"left", marginBottom:"10px",}}>
+                      <div className="col-md-6 col-lg-3" style={{marginBottom:"10px"}}>
                         <label htmlFor="firstname" className="form-label text-nowrap"><strong>First Name</strong></label>
                         <input type="text" className="form-control" id="firstname" value={this.state.firstName} onChange={(e)=>{this.setState({firstName:e.target.value})}} required/>
                       </div>
-                      <div className="col-md-6 col-lg-2 "style={{marginBottom:"10px"}}>
+                      <div className="col-md-6 col-lg-3 "style={{marginBottom:"10px"}}>
                         <label htmlFor="lastname" className="form-label"><strong>Last Name</strong></label>
                         <input type="text" className="form-control" id="lastname" value={this.state.lastName} onChange={(e)=>{this.setState({lastName:e.target.value})}} required/>
                       </div>
                   
-                    <div className="col-md-6 col-lg-3" style={{marginBottom:"10px"}}>
+                    {/* <div className="col-md-6 col-lg-3" style={{marginBottom:"10px"}}>
                         <label htmlFor="date" className="form-label"><strong>Date/Time</strong></label>
                         <input type="date" className="form-control" id="date" required/>
-                      </div>
+                      </div> */}
                       <div className="col-md-6 col-lg-3" style={{marginBottom:"10px"}}>
                         <label htmlFor="dob" className="form-label"><strong>Date of Birth</strong></label>
                         <input type="date" className="form-control" id="dob" required/>
                       </div>
-                      <div className="col-md-5 col-lg-2" style={{marginBottom:"10px"}}>
+                      <div className="col-md-5 col-lg-3" style={{marginBottom:"10px"}}>
                         <label htmlFor="score" className="form-label"><strong>Score</strong></label>
                         <p style={{border:"1px solid #ced4da", height:"38px", borderRadius:'5px', paddingLeft:'10px', paddingTop:"5px"}}>{this.state.totalScore}</p>
                       </div>
@@ -209,7 +208,7 @@ class App extends Component {
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'5px',fontSize:'18px'}}><strong>1. Ability to do household chores (cooking, laundry, housecleaning)?</strong> </p>
                                 
               <div className="table-responsive">                                      
-              <table className="table table-bordered border-dark table-hover">
+              <table className="table table-bordered border-dark table-hover" style={{cursor:'pointer'}}>
               <thead className="table-success">
                     <tr>
                       <th scope="col" className="text-nowrap"></th>
@@ -346,7 +345,7 @@ class App extends Component {
 
 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>2. Ability to do physical activities such as walking, swimming, or other exiercise?</strong></p>
 <div className="table-responsive">   
-              <table className="table table-bordered border-dark table-hover">
+              <table className="table table-bordered border-dark table-hover" style={{cursor:'pointer'}}>
               <thead className="table-success">
                    <tr>
                       <th scope="col" className="text-nowrap"></th>
@@ -475,7 +474,7 @@ class App extends Component {
 {/* question 3 table here */}
         <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>3. Entertainment activities such as going to a movie or concert?</strong> </p>
         <div className="table-responsive">                                      
-        <table className="table table-bordered border-dark table-hover ">
+        <table className="table table-bordered border-dark table-hover " style={{cursor:'pointer'}}>
         <thead className="table-success">
                 <tr>
                   <th scope="col" className="text-nowrap"></th>
@@ -604,7 +603,7 @@ class App extends Component {
                 {/* question 4 table here */}
                 <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>4. Ability to travel by car or bus for a distance greater than 30 minutes away from home?</strong> </p>
                 <div className="table-responsive">                                      
-                  <table className="table table-bordered border-dark table-hover ">
+                  <table className="table table-bordered border-dark table-hover " style={{cursor:'pointer'}}>
                 <thead className="table-success">
                     <tr>
                       <th scope="col" className="text-nowrap"></th>
@@ -739,7 +738,7 @@ class App extends Component {
               {/* question 5 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>5. Participating in social activities outside your home?</strong></p>
               <div className="table-responsive">
-              <table className="table table-bordered border-dark table-hover">
+              <table className="table table-bordered border-dark table-hover" style={{cursor:'pointer'}}>
               <thead className="table-success">
                    <tr>
                       <th scope="col" className="text-nowrap"></th>
@@ -874,7 +873,7 @@ class App extends Component {
                 {/* question 6 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}> <strong>6. Emotional health(nervousness, depression, etc)</strong></p>
               <div className="table-responsive">   
-              <table className="table table-bordered border-dark table-hover">
+              <table className="table table-bordered border-dark table-hover" style={{cursor:'pointer'}}>
               <thead className="table-success">
                     <tr>
                       <th scope="col" className="text-nowrap"></th>
@@ -1009,7 +1008,7 @@ class App extends Component {
                 {/* question 7 table here */}
               <p style={{textAlign:'left', marginBottom:'15px', marginTop:'20px', fontSize:'18px'}}><strong>7. Feeling frustrated?</strong></p>
               <div className="table-responsive">   
-              <table className="table table-bordered border-dark table-hover">
+              <table className="table table-bordered border-dark table-hover" style={{cursor:'pointer'}}>
               <thead className="table-success">
                     <tr>
                       <th scope="col" className="text-nowrap"></th>
