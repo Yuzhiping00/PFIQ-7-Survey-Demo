@@ -14,6 +14,7 @@ class App extends Component {
       firstName:"",
       lastName:"",
       progress:0,
+      disableSubmit: false
     };
   }
 
@@ -126,6 +127,8 @@ class App extends Component {
       sumScores = (subScore_bladder + subScore_bowel + subScore_vagina).toFixed(2);
       this.setState({totalScore: sumScores});
       alert("Hi, "+ this.state.firstName+" "+ this.state.lastName+ ", your total score is: "+ sumScores);
+     // this.setState({disableSubmit: true});
+
       console.log("Total Score is: "+ sumScores);
     }else{ // if a patient forgot to fill any raido buttons
       alert("Hi, "+ this.state.firstName+" "+ this.state.lastName+ ", please answer every question in this survey before submit it!");
@@ -1142,8 +1145,8 @@ class App extends Component {
 
                 {/* save button here */}
               <div className="form-group" style={{textAlign:'center', marginBottom:'10px', marginLeft:'10px'}}>
-                <button className="btn" style={{width:'100px', marginTop:'10px',backgroundColor:'#d1e7dd'}} type="submit">
-                 <strong>Save</strong> 
+                <button className="btn" disabled= {this.state.disableSubmit} style={{width:'100px', marginTop:'10px',backgroundColor:'#d1e7dd'}} type="submit">
+                 <strong>Submit</strong> 
                 </button>
                 
               </div>
