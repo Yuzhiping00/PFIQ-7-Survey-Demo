@@ -13,7 +13,7 @@ class App extends Component {
       totalScore:0,
       firstName:"",
       lastName:"",
-      progress:0,
+      progress:0, // the percentage of answered questions
       disableSubmit: false
     };
   }
@@ -44,30 +44,31 @@ class App extends Component {
       default:
         eachScore =  -1;  
     }
-
-    // create an object based on the event name, event value and obtained score
   
-    //if an object does not exists in the answers array
+    //check if an answer object already exists in the answers array, false means not
     let flag = false;
 
-    let index;
+    // the position of a specific answer in the answers array
+    let index; 
+
+    // loop through the answers array to find if a specific answer already exists
 
     for (let obj of this.state.answers) {
-         // if current object exist in the answers array based on name
+         // if any ansewer in the answers array has the same name as current radio button name, set flag to true
       if (obj.name === changeEvent.target.name) {
         flag = true;
-        // find the index of the oject with the same name
+        // find the index of this answer in the array
         index = this.state.answers.indexOf(obj);
         break;
       }
     }
 
-    if(flag){ // change the existing object score and value in the answers array
+    if(flag){ // change the existing answer's score and value in the answers array
       let newArr = [...this.state.answers];
       newArr[index].score = eachScore;
       newArr[index].value = changeEvent.target.value;
       this.setState({answers: newArr});
-    }else{ // if the current object does not exist, then add it to the answers array
+    }else{ // if the current object does not exist, then create an object based on the event name, event value and obtained score; then add it to the answers array
       let answer = {};
       answer.name = changeEvent.target.name;
       answer.score = eachScore;
@@ -76,11 +77,14 @@ class App extends Component {
       this.state.answers.push(answer);
     }
     console.log(this.state.answers);
+
     // this is used to calculate progress and total number of questions is 21
+
     let roundNumber = Math.round((this.state.answers.length)/21 *100);
     this.setState({progress:roundNumber});
   };
 
+  // handle form submit event
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
 
@@ -144,7 +148,7 @@ class App extends Component {
      }
 
      // use formula to get final value for each category
-     let finalResult = value / 7 * (100 / 3);
+     let finalResult = value / category.length * (100 / 3);
      return finalResult; 
    }
 
@@ -153,17 +157,19 @@ class App extends Component {
 
     return (
       <div className="container">
-        <div id="heading" className="col-xs-12 col-md-12 col-lg-10" style={{borderRadius:'10px', position:'sticky', backgroundColor:'white', top:'0px',  boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)"}}>
+        <div id="heading" className="col-xs-12 col-md-12 col-lg-10" style={{borderRadius:'10px',  boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.5)"}}>
             <h1>Pelvic Floor Impact Questionnaire - PFIQ-7</h1>
-            <p style={{paddingLeft:'15px', paddingRight: '15px'}}>
+            <p style={{padding:'10px', paddingTop:'5px'}}>
             <strong>Instructions:</strong> Some women find that bladder, bowel, or vaginal symptoms affect their
             activities, relationships, and feelings. For each question, check the response that best
             describes how much your activities, relationships, or feelings have been affected by your
             bladder, bowel, or vaginal symptoms or conditions over the last 3 months. Please
             make sure you mark an answer in all 3 columns for each question.
             </p>
-        
-            <div style={{paddingLeft:'15px', paddingRight: '15px'}}>
+          
+        </div>
+
+        <div id='progressbar' className="col-xs-12 col-md-12 col-lg-10" style={{paddingLeft:'15px', paddingRight: '15px' , position:'sticky', top:'0px', backgroundColor:'ivory'}}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ width: '100%', mr: 1 }}>
                   <LinearProgress variant="determinate"  style={{height: '12px'}} value={this.state.progress}/>
@@ -173,8 +179,6 @@ class App extends Component {
                 </Box>
               </Box>
             </div>
-          
-        </div>
         
        
           <div  className="col-xs-12 col-md-12 col-lg-10" style={{textAlign:'center', margin:'auto auto', width:'90%'}} >

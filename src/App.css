@@ -5,9 +5,12 @@
     font-size: 22px;
     padding: 5px;  
     margin-top:10px; 
+    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
-  #heading {
+  #heading, #progressbar {
     width: 90%;
     margin: auto;
     margin-top: 5px;
@@ -19,9 +22,9 @@
     font-size: 18px;
     padding:5px;
     color: black;
-    margin-bottom: 10px;
+    /* margin-bottom: 5px; */
     text-align: center;
-    border-radius: 10px;
+    
     /* background-color: #d1e7dd; */
     
   }
@@ -69,3 +72,7 @@ input[type='radio']:checked:after {
   .table tbody tr:hover td, .table tbody tr:hover th {
     background-color: #f6fcfa;
 }
+
+
+
+
